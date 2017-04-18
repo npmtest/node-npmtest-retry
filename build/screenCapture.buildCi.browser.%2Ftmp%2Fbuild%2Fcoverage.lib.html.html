@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-retry/retry/lib/retry.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-retry/node_modules/retry/lib/retry.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-retry">npmtest-retry (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-retry/retry/lib/retry.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-retry/node_modules/retry/lib/retry.js</span></h1>
     <h2>
         
         Statements: <span class="metric">10% <small>(5 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-retry/retry/lib/</a> &#187; retry.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-retry/node_modules/retry/lib/</a> » retry.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -416,109 +414,110 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var RetryOperation = require('./retry_operation');
 &nbsp;
-exports.operation = <span class="fstat-no" title="function not covered" >function(options) {</span>
-<span class="cstat-no" title="statement not covered" >  var timeouts = exports.timeouts(options);</span>
-<span class="cstat-no" title="statement not covered" >  return new RetryOperation(timeouts, {</span>
+exports.operation = <span class="fstat-no" title="function not covered">function(options) {</span>
+<span class="cstat-no" title="statement not covered">  var timeouts = exports.timeouts(options);</span>
+<span class="cstat-no" title="statement not covered">  return new RetryOperation(timeouts, {</span>
       forever: options &amp;&amp; options.forever,
       unref: options &amp;&amp; options.unref
   });
 };
 &nbsp;
-exports.timeouts = <span class="fstat-no" title="function not covered" >function(options) {</span>
-<span class="cstat-no" title="statement not covered" >  if (options instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered" >    return [].concat(options);</span>
+exports.timeouts = <span class="fstat-no" title="function not covered">function(options) {</span>
+<span class="cstat-no" title="statement not covered">  if (options instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered">    return [].concat(options);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var opts = {</span>
+<span class="cstat-no" title="statement not covered">  var opts = {</span>
     retries: 10,
     factor: 2,
     minTimeout: 1 * 1000,
     maxTimeout: Infinity,
     randomize: false
   };
-<span class="cstat-no" title="statement not covered" >  for (var key in options) {</span>
-<span class="cstat-no" title="statement not covered" >    opts[key] = options[key];</span>
+<span class="cstat-no" title="statement not covered">  for (var key in options) {</span>
+<span class="cstat-no" title="statement not covered">    opts[key] = options[key];</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (opts.minTimeout &gt; opts.maxTimeout) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error('minTimeout is greater than maxTimeout');</span>
+<span class="cstat-no" title="statement not covered">  if (opts.minTimeout &gt; opts.maxTimeout) {</span>
+<span class="cstat-no" title="statement not covered">    throw new Error('minTimeout is greater than maxTimeout');</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var timeouts = [];</span>
-<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; opts.retries; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    timeouts.push(this.createTimeout(i, opts));</span>
+<span class="cstat-no" title="statement not covered">  var timeouts = [];</span>
+<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; opts.retries; i++) {</span>
+<span class="cstat-no" title="statement not covered">    timeouts.push(this.createTimeout(i, opts));</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (options &amp;&amp; options.forever &amp;&amp; !timeouts.length) {</span>
-<span class="cstat-no" title="statement not covered" >    timeouts.push(this.createTimeout(i, opts));</span>
+<span class="cstat-no" title="statement not covered">  if (options &amp;&amp; options.forever &amp;&amp; !timeouts.length) {</span>
+<span class="cstat-no" title="statement not covered">    timeouts.push(this.createTimeout(i, opts));</span>
   }
 &nbsp;
   // sort the array numerically ascending
-<span class="cstat-no" title="statement not covered" >  timeouts.sort(<span class="fstat-no" title="function not covered" >function(a,b) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return a - b;</span>
+<span class="cstat-no" title="statement not covered">  timeouts.sort(<span class="fstat-no" title="function not covered">function(a,b) {</span></span>
+<span class="cstat-no" title="statement not covered">    return a - b;</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return timeouts;</span>
+<span class="cstat-no" title="statement not covered">  return timeouts;</span>
 };
 &nbsp;
-exports.createTimeout = <span class="fstat-no" title="function not covered" >function(attempt, opts) {</span>
-<span class="cstat-no" title="statement not covered" >  var random = (opts.randomize)</span>
+exports.createTimeout = <span class="fstat-no" title="function not covered">function(attempt, opts) {</span>
+<span class="cstat-no" title="statement not covered">  var random = (opts.randomize)</span>
     ? (Math.random() + 1)
     : 1;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var timeout = Math.round(random * opts.minTimeout * Math.pow(opts.factor, attempt));</span>
-<span class="cstat-no" title="statement not covered" >  timeout = Math.min(timeout, opts.maxTimeout);</span>
+<span class="cstat-no" title="statement not covered">  var timeout = Math.round(random * opts.minTimeout * Math.pow(opts.factor, attempt));</span>
+<span class="cstat-no" title="statement not covered">  timeout = Math.min(timeout, opts.maxTimeout);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return timeout;</span>
+<span class="cstat-no" title="statement not covered">  return timeout;</span>
 };
 &nbsp;
-exports.wrap = <span class="fstat-no" title="function not covered" >function(obj, options, methods) {</span>
-<span class="cstat-no" title="statement not covered" >  if (options instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered" >    methods = options;</span>
-<span class="cstat-no" title="statement not covered" >    options = null;</span>
+exports.wrap = <span class="fstat-no" title="function not covered">function(obj, options, methods) {</span>
+<span class="cstat-no" title="statement not covered">  if (options instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered">    methods = options;</span>
+<span class="cstat-no" title="statement not covered">    options = null;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!methods) {</span>
-<span class="cstat-no" title="statement not covered" >    methods = [];</span>
-<span class="cstat-no" title="statement not covered" >    for (var key in obj) {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof obj[key] === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        methods.push(key);</span>
+<span class="cstat-no" title="statement not covered">  if (!methods) {</span>
+<span class="cstat-no" title="statement not covered">    methods = [];</span>
+<span class="cstat-no" title="statement not covered">    for (var key in obj) {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof obj[key] === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        methods.push(key);</span>
       }
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (var i = 0; i &lt; methods.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    var method   = methods[i];</span>
-<span class="cstat-no" title="statement not covered" >    var original = obj[method];</span>
+<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; methods.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">    var method   = methods[i];</span>
+<span class="cstat-no" title="statement not covered">    var original = obj[method];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    obj[method] = <span class="fstat-no" title="function not covered" >function retryWrapper() {</span></span>
-<span class="cstat-no" title="statement not covered" >      var op       = exports.operation(options);</span>
-<span class="cstat-no" title="statement not covered" >      var args     = Array.prototype.slice.call(arguments);</span>
-<span class="cstat-no" title="statement not covered" >      var callback = args.pop();</span>
+<span class="cstat-no" title="statement not covered">    obj[method] = <span class="fstat-no" title="function not covered">function retryWrapper() {</span></span>
+<span class="cstat-no" title="statement not covered">      var op       = exports.operation(options);</span>
+<span class="cstat-no" title="statement not covered">      var args     = Array.prototype.slice.call(arguments);</span>
+<span class="cstat-no" title="statement not covered">      var callback = args.pop();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      args.push(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (op.retry(err)) {</span>
-<span class="cstat-no" title="statement not covered" >          return;</span>
+<span class="cstat-no" title="statement not covered">      args.push(<span class="fstat-no" title="function not covered">function(err) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (op.retry(err)) {</span>
+<span class="cstat-no" title="statement not covered">          return;</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (err) {</span>
-<span class="cstat-no" title="statement not covered" >          arguments[0] = op.mainError();</span>
+<span class="cstat-no" title="statement not covered">        if (err) {</span>
+<span class="cstat-no" title="statement not covered">          arguments[0] = op.mainError();</span>
         }
-<span class="cstat-no" title="statement not covered" >        callback.apply(this, arguments);</span>
+<span class="cstat-no" title="statement not covered">        callback.apply(this, arguments);</span>
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      op.attempt(<span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        original.apply(obj, args);</span>
+<span class="cstat-no" title="statement not covered">      op.attempt(<span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        original.apply(obj, args);</span>
       });
     };
-<span class="cstat-no" title="statement not covered" >    obj[method].options = options;</span>
+<span class="cstat-no" title="statement not covered">    obj[method].options = options;</span>
   }
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 18:06:35 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 21:03:15 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
