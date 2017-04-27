@@ -1,6 +1,6 @@
 # npmtest-retry
 
-#### test coverage for  [retry (v0.10.1)](https://github.com/tim-kos/node-retry)  [![npm package](https://img.shields.io/npm/v/npmtest-retry.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-retry) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-retry.svg)](https://travis-ci.org/npmtest/node-npmtest-retry)
+#### basic test coverage for  [retry (v0.10.1)](https://github.com/tim-kos/node-retry)  [![npm package](https://img.shields.io/npm/v/npmtest-retry.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-retry) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-retry.svg)](https://travis-ci.org/npmtest/node-npmtest-retry)
 
 #### Abstraction for exponential and custom retry strategies for failed operations.
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-retry/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-retry/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-retry/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-retry/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-retry/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-retry/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-retry/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-retry/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-retry/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-retry/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-retry/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-retry/build/coverage.html/index.html)
 
@@ -74,7 +74,8 @@
         "url": "git://github.com/tim-kos/node-retry.git"
     },
     "scripts": {},
-    "version": "0.10.1"
+    "version": "0.10.1",
+    "bin": {}
 }
 ```
 
